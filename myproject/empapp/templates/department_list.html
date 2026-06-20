@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-header">
+  <h2>Departments</h2>
+  <a href="/department/add/" class="btn btn-primary">+ Add Department</a>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Department Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for dept in departments %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ dept.name }}</td>
+      <td>{{ dept.description }}</td>
+      <td>
+        <a href="/department/edit/{{ dept.pk }}/" class="btn btn-warning">Edit</a>
+        <a href="/department/delete/{{ dept.pk }}/" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="4" style="text-align:center; color:#999;">No departments found.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

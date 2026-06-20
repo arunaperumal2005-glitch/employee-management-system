@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2 style="margin-bottom:24px;">{{ title }}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-group">
+      <label>{{ field.label }}</label>
+      {{ field }}
+      {% if field.errors %}
+        <p style="color:red; font-size:12px;">{{ field.errors }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+    <button class="btn btn-primary" type="submit">Save</button>
+    <a href="/" class="btn btn-secondary" style="margin-left:8px;">Cancel</a>
+  </form>
+</div>
+{% endblock %}
