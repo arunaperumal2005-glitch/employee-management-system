@@ -61,8 +61,10 @@ This project was developed using Python and Django to gain practical experience 
 ## Screenshots
 
 ### department_details
+![Department Details Page](department_details.png)
 
 ### employee_details
+![Employee Details Page](employee_details.png)
 
 
 ## Learning Outcomes
